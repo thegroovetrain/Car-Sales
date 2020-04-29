@@ -18,12 +18,12 @@ const App = props => {
 
   const removeFeature = item => {
     console.log('REMOVE', item);
-    remove(item);
+    props.remove(item);
   };
   
   const buyItem = item => {
     console.log('ADD', item);
-    add(item);
+    props.add(item);
   };
 
   return (
