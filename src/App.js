@@ -6,27 +6,25 @@ import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
+import { add, remove } from './actions/actions';
+
 
 const mapStateToProps = state => {
   console.log(state);
   return state.reducer;
 };
 
-const removeFeature = item => {
-  return {
-    type: "REMOVE_FEATURE",
-    payload: item
-  };
-};
-
-const buyItem = item => {
-  return {
-    type: "ADD_FEATURE",
-    payload: item
-  };
-};
-
 const App = props => {
+
+  const removeFeature = item => {
+    console.log('REMOVE', item);
+    remove(item);
+  };
+  
+  const buyItem = item => {
+    console.log('ADD', item);
+    add(item);
+  };
 
   return (
     <div className="boxes">
@@ -53,4 +51,4 @@ const App = props => {
   );
 };
 
-export default connect(mapStateToProps, { removeFeature, buyItem })(App);
+export default connect(mapStateToProps, { add, remove })(App);

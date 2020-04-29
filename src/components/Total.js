@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     car: state.reducer.car,
     additionalPrice: state.reducer.additionalPrice
